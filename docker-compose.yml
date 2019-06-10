@@ -216,14 +216,14 @@ services:
         JAVA_OPTS: -Xmx128m
 
   dynamodblocal:
-    build: ./dynamodblocal
+    image: registry.cn-shenzhen.aliyuncs.com/ringou/dynamodblocal
     ports:
      - "8000:8000"
     environment:
       JAVA_OPTS: -Xmx128m
 
   dynamodblocal-init:
-    build: ./dynamodblocal-init
+    image: registry.cn-shenzhen.aliyuncs.com/ringou/dynamodblocal-init
     depends_on:
       - dynamodblocal
     restart: on-failure
